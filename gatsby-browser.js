@@ -18,6 +18,10 @@ function scrollToAnchor(location) {
     // NOTE: 기존의 location.hash를 디코딩하여 사용함
     const decodedHash = decodeURI(location.hash);
     const item = document.querySelector(`${decodedHash}`);
+    // NOTE: item이 없을 때 스크롤하지 않음
+    if (!item) {
+      return;
+    }
     item.scrollIntoView();
   }
 
