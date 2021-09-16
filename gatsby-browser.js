@@ -15,7 +15,9 @@ import './src/styles/normalize.css';
  */
 function scrollToAnchor(location) {
   if (location && location.hash) {
-    const item = document.querySelector(`${location.hash}`);
+    // NOTE: 기존의 location.hash를 디코딩하여 사용함
+    const decodedHash = decodeURI(location.hash);
+    const item = document.querySelector(`${decodedHash}`);
     item.scrollIntoView();
   }
 
